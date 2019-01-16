@@ -539,7 +539,7 @@ void GenerateSubobjectSchemaForActor(FComponentIdGenerator& IdGenerator, UClass*
 		{
 			UObject* Value = PropertyTypeInfo->Object;
 
-			if (Value != nullptr && !Value->IsEditorOnly())
+			if (Value != nullptr && !Value->IsEditorOnly() && Value->IsSupportedForNetworking())
 			{
 				if (!SeenComponents.Contains(Value))
 				{
